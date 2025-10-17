@@ -26,15 +26,17 @@
 
 package www.thecodemonks.techbytes.ui.about
 
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import www.thecodemonks.techbytes.BuildConfig
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import www.thecodemonks.techbytes.BuildConfig
 import www.thecodemonks.techbytes.R
 import www.thecodemonks.techbytes.databinding.FragmentAboutBinding
 import www.thecodemonks.techbytes.ui.base.BaseFragment
@@ -47,6 +49,7 @@ class AboutFragment : BaseFragment<FragmentAboutBinding, AboutViewModel>() {
         initViews()
     }
 
+    @SuppressLint("StringFormatMatches")
     private fun initViews() = with(binding) {
         appVersion.text = getString(
             R.string.text_app_version,

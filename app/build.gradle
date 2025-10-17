@@ -34,12 +34,14 @@ plugins {
 
 
 android {
-    compileSdkVersion 30
+
+    namespace "www.thecodemonks.techbytes"
+    compileSdk 35
 
     defaultConfig {
         applicationId "www.thecodemonks.techbytes"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdk 21
+        targetSdk 35
         versionCode 1
         versionName "1.1.1"
 
@@ -56,6 +58,11 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 
     buildTypes {
@@ -66,19 +73,23 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = "17"
     }
+
+
+
+
 }
 
 dependencies {
 
-    implementation 'androidx.work:work-runtime:2.5.0'
-    def work_version = "2.5.0"
+    implementation 'androidx.work:work-runtime:2.9.1'
+    def work_version = "2.9.1"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
@@ -87,21 +98,21 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 
     // Architectural Components
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5"
 
     // Room
-    implementation "androidx.room:room-runtime:2.2.6"
-    kapt "androidx.room:room-compiler:2.2.6"
+    implementation "androidx.room:room-runtime:2.6.1"
+    kapt "androidx.room:room-compiler:2.6.1"
 
     // Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:2.2.6"
+    implementation "androidx.room:room-ktx:2.6.1"
 
     // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.5"
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
@@ -113,8 +124,9 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.3"
 
     // Coroutine Lifecycle Scopes
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.5"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.5"
 
     // Coil-kt
     implementation 'io.coil-kt:coil:1.1.0'
@@ -133,7 +145,8 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     // Hilt support for lifecycle + viewModels + workManager
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_support"
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_support"
+    implementation "androidx.hilt:hilt-navigation-fragment:1.1.0"
     implementation "androidx.hilt:hilt-work:$hilt_support"
     kapt "androidx.hilt:hilt-compiler:$hilt_support"
 }

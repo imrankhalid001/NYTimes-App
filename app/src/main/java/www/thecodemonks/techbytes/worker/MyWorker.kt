@@ -54,7 +54,7 @@ class MyWorker(context: Context, params: WorkerParameters) : Worker(context, par
             applicationContext,
             0,
             intent,
-            PendingIntent.FLAG_ONE_SHOT
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val channelId = applicationContext.getString(R.string.default_notification_channel_id)

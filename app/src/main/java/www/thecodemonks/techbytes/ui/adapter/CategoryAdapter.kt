@@ -92,7 +92,7 @@ class CategoryAdapter(private val category: MutableList<Category>) :
 
                     MyDrawableCompat.setColorFilter(
                         itemCategoryTitle.background,
-                        ContextCompat.getColor(root.context, R.color.design_default_color_primary)
+                        ContextCompat.getColor(root.context, R.color.colorPrimary)
                     )
                 }
                 else -> {

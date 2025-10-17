@@ -31,7 +31,7 @@
     <string name="author">By Sanju S</string>
 
     <!-- Share article -->
-    <string name="share_message">\"%s\"\n\n source: %s. \n\nVisit: https://github.com/TheCodeMonks/NYTimes-App</string>
+    <string name="share_message">"%1$s"\n\nSource: %2$s.\n\nVisit: https://github.com/TheCodeMonks/NYTimes-App</string>
 
     <!-- Menu -->
     <string name="bookmark">Bookmark</string>
@@ -58,6 +58,6 @@
     <string name="text_about_license">Licensed Under MIT License</string>
     <string name="text_about_visit_title">Visit</string>
     <string name="text_about_visit_url"><u>https://github.com/TheCodeMonks/NYTimes-App</u></string>
-    <string name="text_app_version">v%s (%d)</string>
+    <string name="text_app_version" formatted="false">App version: %s (%s)</string>
 
 </resources>

@@ -28,30 +28,32 @@
 buildscript {
 
     //versions
-    ext.kotlin_version = "1.4.21"
-    ext.hilt_version =  "2.30.1-alpha"
-    ext.hilt_support =  "1.0.0-alpha02"
+    ext.kotlin_version = "1.9.24"
+    ext.hilt_version = '2.51.1'
+    ext.hilt_support =  "1.1.0"
 
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.0-beta05'
+        classpath 'com.android.tools.build:gradle:8.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.2"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.8.2"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
     }
 }
 
 plugins {
-    id "org.jlleitschuh.gradle.ktlint" version "9.4.1"
+    id "org.jlleitschuh.gradle.ktlint" version "13.1.0"
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     apply plugin: "org.jlleitschuh.gradle.ktlint"
 }

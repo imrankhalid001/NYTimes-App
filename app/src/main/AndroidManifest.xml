@@ -25,8 +25,7 @@
   ~  */
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="www.thecodemonks.techbytes">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <queries>
         <intent>
@@ -39,6 +38,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".app.NYTimes"
         android:allowBackup="true"
@@ -47,12 +48,15 @@
         android:roundIcon="@drawable/nytimes"
         android:supportsRtl="true"
         android:theme="@style/Theme.Topten">
-        <activity android:name="www.thecodemonks.techbytes.ui.base.BaseActivity">
+        <activity android:name="www.thecodemonks.techbytes.ui.base.BaseActivity"
+                android:exported="true"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

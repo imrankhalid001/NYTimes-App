@@ -27,12 +27,12 @@
 package www.thecodemonks.techbytes.ui.viewmodel
 
 import android.app.Application
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import www.thecodemonks.techbytes.datastore.UIModeMutableStore
@@ -41,8 +41,10 @@ import www.thecodemonks.techbytes.model.Article
 import www.thecodemonks.techbytes.repo.ArticleRepository
 import www.thecodemonks.techbytes.utils.Constants
 import www.thecodemonks.techbytes.utils.NetworkManager
+import javax.inject.Inject
 
-class ArticleViewModel @ViewModelInject constructor(
+@HiltViewModel
+class ArticleViewModel @Inject constructor(
     application: Application,
     private val repo: ArticleRepository,
     private val uiModeEdit: UIModeMutableStore,
